@@ -1,6 +1,6 @@
 [root]
 name = "rusty_circle"
-version = "0.0.1"
+version = "1.0.0"
 dependencies = [
  "docopt 0.6.74 (registry+https://github.com/rust-lang/crates.io-index)",
  "imagefmt 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
