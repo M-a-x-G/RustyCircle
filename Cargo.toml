@@ -1,10 +1,11 @@
 [package]
 
 name = "rusty_circle"
-version = "0.0.1"
+version = "1.0.0"
 authors = [ "Max Gregor <gregor@fh-brandenburg.de>" ]
 
 [dependencies]
 
 imagefmt = "2.0.0"
 docopt = "0.6"
+rustc-serialize = "0.3"
