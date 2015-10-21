@@ -22,7 +22,7 @@ This is an example image with coordinates x: 100, y: 75, r: 50.
     $ cargo run --release 100 75 50
 ```
 
-[![Raster graphic] (https://github.com/M-a-x-G/RustyCircle/blob/master/circle.png)
+![Raster graphic] (https://github.com/M-a-x-G/RustyCircle/blob/master/circle.png)
 
 ## Licence
 
