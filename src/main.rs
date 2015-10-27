@@ -31,9 +31,6 @@ fn main() {
 	const USAGE: &'static str = "
 Usage:
  rusty_circle <center-x> <center-y> <radius>
-
-Options:
-    -h, --help         Show this message.
 ";
 
 	// Struct for comandline values
@@ -68,26 +65,31 @@ Options:
 
 	// parse the center x coordinate
 	cx = match cx_str.trim().parse(){
-						Ok(num) => if num > 0 && num <= 150 {num} else {println!("Please type a y coordinate between 1-150!"); -1},
-						Err (_) => {println!("Please type a x coordinate between 1-150!"); return}, };
-
-	// parse the radius
-	radius = match redius_str.trim().parse(){
-						Ok(num) => if num > 0 && num <= 100{num} else {println!("Please type a radius between 1-100!"); -1},
-						Err (_) => {println!("Please type a number between 1-100!e"); return}, };
+						Ok(num) => if num > 0 && num <= 200 {num} else {println!("Please type a x coordinate between 1-200!"); -1},
+						Err (_) => {println!("Please type x y coordinate between 1-200!"); -1},};
 
 	// parse the center y coordinate
 	cy = match cy_str.trim().parse(){
-						Ok(num) => if num > 0 && num <= 200 {num} else {println!("Please type a y coordinate between 1-200!"); -1},
-						Err (_) => {println!("Please type a y coordinate between 1-200!"); return}, };
+			Ok(num) => if num > 0 && num <= 150 {num} else {println!("Please type a y coordinate between 1-150!"); -1},
+			Err (_) => {println!("Please type a y coordinate between 1-150!"); -1},};
 
-	prepare_grid(w3, &mut image_vector);
-	prepare_circle(cx, cy, radius, w3, &mut image_vector);
+	// parse the radius
+	radius = match redius_str.trim().parse(){
+			Ok(num) => if num > 0 && num <= 100{num} else {println!("Please type a radius between 1-100!"); -1},
+			Err (_) => {println!("Please type a radius between 1-100!"); -1},};
 
-	//  write image
-	imagefmt::Image{w: w, h: h, fmt:ColFmt::RGB, buf:image_vector}.write("circle.png", ColType::Color).unwrap();
+	if cx != -1 && cy != -1 && radius != -1 {
 
-	println!("Circle image succussfully saved to circle.png");
+		prepare_grid(w3, &mut image_vector);
+		prepare_circle(cx, cy, radius, w3, &mut image_vector);
+
+		//  write image
+		imagefmt::Image{w: w, h: h, fmt:ColFmt::RGB, buf:image_vector}.write("circle.png", ColType::Color).unwrap();
+
+		println!("Circle image succussfully saved to circle.png");
+
+	}
+
 
 }
 

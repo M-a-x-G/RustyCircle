@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/M-a-x-G/RustyCircle.svg)](https://travis-ci.org/M-a-x-G/RustyCircle)
 
-This is an implementation of the [circle version of Bresenham's line algorithm] (https://de.wikipedia.org/wiki/Bresenham-Algorithmus) written in Rust.
+This is an implementation of the [circle version of Bresenham's line algorithm] (https://de.wikipedia.org/wiki/Bresenham-Algorithmus) written in Rust. 
+The program draws an image of a circle in a grid with 200pt width and 150 height. One point is 5px x 5px.
 
 ## Getting started
 
@@ -13,6 +14,10 @@ This is an implementation of the [circle version of Bresenham's line algorithm] 
 ```sh
     $ cargo run --release <center-x> <center-y> <radius>
 ```
+
+* <center-x> is the x coordinate of the center point for the circle (whole number between 1-200)
+* <center-y> is the y coordinate of the center point for the circle (whole number between 1-150)
+* <radius> is the radius for the circle (whole number between 1-100 )
 
 ## Example result
 
